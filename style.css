@@ -1,0 +1,66 @@
+Canvas {
+  border: 2px solid #000;
+  height: 500px;
+  width: 500px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.panel{
+  display: inline-block;
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+}
+
+.launcher, .sliders {
+  border: 1px solid #aaa;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.launcher input {
+  display: block;
+  margin-right: 30px;
+  width: 140px;
+}
+
+.sliders input {
+  display: block;
+}
+
+.num {
+  display: inline-block;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+#inputbox{
+	visibility: hidden;
+	width:100%;
+	height: 560px;
+	position: absolute;
+	
+	
+}
+#target{
+	background-color: blue;
+	
+}
