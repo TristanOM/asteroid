@@ -229,6 +229,7 @@ $(document).keyup(function (e) {
 	}
 });
 
+//test
 function getKeyIndex (key){
 	switch(key){
 		case 119:
