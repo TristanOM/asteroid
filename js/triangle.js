@@ -20,25 +20,14 @@ triangle.prototype.turn = function(degrees){
 
 triangle.prototype.move = function(distance){
 	Rad = toRadians(this.angle);
-	
-	//this.position.x = this.position.x + (distance *Math.cos(Rad));
-	//this.position.y = this.position.y + (distance *Math.sin(Rad));
-	
+
 	ax = (distance *Math.cos(Rad));
 	ay = (distance *Math.sin(Rad));
 	
 	var addVelocity = new Vector (ax, ay);
-	
-	//this.vel = this.vel.add(addVelocity).bound(this.bounds);
-	//this.vel= this.vel.scale
-	
-
 	this.vel = this.vel.add(addVelocity);
-	
 	this.position = this.position.add(this.vel);
 	this.setSpeed();//set a max speed
-	//this.position = this.position.scale(2.0);
-	
 }
 
 triangle.prototype.bind = function(position){
@@ -70,14 +59,11 @@ function keyL(player, keys){
 }
 
 triangle.prototype.draw = function(ctx){
-	//this.position = this.position.add(this.vel).bound(this.bounds);
 	this.friction();//slow down the velocity 
 	VectorAngle= this.vel.angle();
 	nx = Math.abs(1 *Math.cos(VectorAngle));
 	ny = Math.abs(1 *Math.sin(VectorAngle));
 	subVector = new Vector(nx,ny);
-	//this.vel.x = this.vel.x/.2;
-	//this.vel.y = this.vel.y/.2;//friction to slow down 
 	this.position = this.position.add(this.vel).bound(this.bounds);
 	drawTriangle(ctx, this);
 }

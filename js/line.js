@@ -4,7 +4,6 @@ function Line(pos, velocity, angle, distance) {
   this.distance = distance;
   this.speed = velocity;
   this.isDone = false;
-  //this.vel = getVelocity();
 }
 
 Line.prototype.notDone = function(){
@@ -37,14 +36,11 @@ Line.prototype.move = function(ctx, params){
 }
 
 Line.prototype.draw = function(ctx){
-	//this.position = this.position.add(this.vel).bound(this.bounds);
 	this.friction();//slow down the velocity 
 	VectorAngle= this.vel.angle();
 	nx = Math.abs(1 *Math.cos(VectorAngle));
 	ny = Math.abs(1 *Math.sin(VectorAngle));
 	subVector = new Vector(nx,ny);
-	//this.vel.x = this.vel.x/.2;
-	//this.vel.y = this.vel.y/.2;//friction to slow down 
 	this.position = this.position.add(this.vel).bound(this.bounds);
 	drawLine(ctx, this);
 }

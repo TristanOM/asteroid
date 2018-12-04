@@ -20,9 +20,7 @@ rock.prototype.move = function(rockList, speed, ctx, params){
 	this.vel = this.vel.scale(speed);
 	this.position.x = this.vel.x + this.position.x;
 	this.position.y = this.vel.y + this.position.y;
-	//this.position = this.position.add(this.vel).bound(screen);
 	this.position = this.position.bound(params);
-	//this.draw(ctx, 'blue' );
 }
 
 rock.prototype.draw = function(ctx, color) {

@@ -42,7 +42,6 @@ var shotNum = 0;
 var pause = false;
 
 var playerCheck = 1;
-//var shotList = [];
 
 function moveRocks(rockList) {
 	rockList.forEach(function(rock){
@@ -70,7 +69,6 @@ function render(ctx, rockList) {
   ctx.clearRect(0, 0, screen.params.width, screen.params.height);
   rockList.forEach(function(rock) {
     rock.draw(ctx, 'black');
-	//drawTriangle(ctx,screen.player);
 	screen.player.draw(ctx);
 	playerCheck =1;
   });
@@ -82,7 +80,6 @@ function moveShots(rockList) {
 			shot.move(screen.env.ctx, screen.params);			
 		}
 	});
-	
 }
 
 function move(rockList) {
@@ -102,7 +99,6 @@ function loop(ctx, rockList) {
 	{
 	  render(ctx, rockList);
 	  move(rockList);
-	   
 	  keyL(screen.player, screen.keys );
 	}
     else
@@ -132,7 +128,6 @@ function RocknotHit(rock) {
 }
 
 function pause() {
-  //clearInterval(screen.interval.time);
   screen.env.interval = 0;
   pause = true;
 }
@@ -143,10 +138,6 @@ function play() {
 		loop(screen.env.ctx, screen.rockList)
 	  }, screen.env.delay);
 	}
-  
-  //for (var i = 0; i < shotList; ++i) {
-    //shotList.pop();
-  //}
   shotList = [];
   
   
@@ -204,16 +195,6 @@ $(document).ready(function() {
   });
 });
 
-//$(document).on("keypress" , function( event) {
-	//if(playerCheck == 1){
-	//keyL(screen.player );
-	//}
-	//playerCheck = 0;
-    //screen.player.move(100);
-//});
-
-//use this to process multiple keys
-
 
 $(document).keydown(function (e) {
 	var index = getKeyIndex(e.which)
@@ -229,7 +210,6 @@ $(document).keyup(function (e) {
 	}
 });
 
-//test
 function getKeyIndex (key){
 	switch(key){
 		case 119:
